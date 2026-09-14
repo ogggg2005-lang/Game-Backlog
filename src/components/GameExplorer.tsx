@@ -59,7 +59,11 @@ export default function GameExplorer({ initialGames }: GameExplorerProps) {
 
   function handleSave(draft: GameDraft) {
     if (editingId === null) {
-      dispatch(created(toGame(crypto.randomUUID(), draft)));
+      const newId = typeof crypto.randomUUID === "function" 
+        ? crypto.randomUUID() 
+        : Date.now().toString(36) + Math.random().toString(36).substring(2);
+        
+      dispatch(created(toGame(newId, draft)));
       return;
     }
     dispatch(updated(toGame(editingId, draft)));
