@@ -17,8 +17,23 @@ const gamesSlice = createSlice({
         state[index] = action.payload;
       }
     },
+    statusUpdated: (
+      state,
+      action: PayloadAction<{ id: string; status: Game["status"] }>,
+    ) => {
+      const game = state.find((item) => item.id === action.payload.id);
+      if (game) {
+        game.status = action.payload.status;
+      }
+    },
   },
 });
 
-export const { initialized, created, deleted, updated } = gamesSlice.actions;
+export const {
+  initialized,
+  created,
+  deleted,
+  updated,
+  statusUpdated,
+} = gamesSlice.actions;
 export default gamesSlice.reducer;

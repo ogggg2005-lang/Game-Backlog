@@ -118,6 +118,7 @@ export default function GameForm({
             <option value="PlayStation 5">PlayStation 5</option>
             <option value="Xbox Series X|S">Xbox Series X|S</option>
             <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="Mobile phone">Mobile phone</option>
           </select>
           {errors.platform ? <span className="block text-sm text-red-600">{errors.platform}</span> : null}
         </label>
