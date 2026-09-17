@@ -32,7 +32,7 @@ export default function GameCard({
       <div>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2 text-xs font-semibold text-zinc-900 dark:text-zinc-100">
-            สถานะ:
+            สถานะ
             <div className="flex gap-1" role="group" aria-label={`สถานะของ ${game.name}`}>
               {statusOptions.map(({ value, label, Icon }) => (
                 <button
