@@ -66,7 +66,6 @@ export default function GameForm({
 }: GameFormProps) {
   const [draft, setDraft] = useState<GameDraft>(toDraft(initialGame));
   const [errors, setErrors] = useState<FormErrors>({});
-  const isValid = Object.keys(validate(draft)).length === 0;
   const inputClassName =
     "h-11 w-full rounded-lg border border-zinc-300 bg-white px-3 text-zinc-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100";
 
@@ -139,7 +138,7 @@ export default function GameForm({
 
       <div className="flex flex-col-reverse justify-end gap-3 border-t border-zinc-100 pt-4 sm:flex-row dark:border-zinc-800">
         {initialGame ? <button type="button" onClick={onCancel} className="rounded-lg border border-zinc-300 px-5 py-2.5 font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800">ยกเลิก</button> : null}
-        <button type="submit" disabled={!isValid} className={`rounded-lg px-5 py-2.5 font-medium text-white ${isValid ? "bg-emerald-600 hover:bg-emerald-700" : "cursor-not-allowed bg-red-600"}`}>บันทึก</button>
+        <button type="submit" className="rounded-lg bg-emerald-600 px-5 py-2.5 font-medium text-white hover:bg-emerald-700">บันทึก</button>
       </div>
     </form>
   );
