@@ -16,7 +16,7 @@ const statusClassNames = {
 } as const;
 
 const statusOptions: Array<{ value: GameStatus; label: string; Icon: LucideIcon }> = [
-  { value: "not-started", label: "ยังไม่เริ่ม", Icon: CircleDashed },
+  { value: "not-started", label: "ยังไม่เริ่มเล่น", Icon: CircleDashed },
   { value: "playing", label: "กำลังเล่น", Icon: PlayCircle },
   { value: "completed", label: "เล่นจบแล้ว", Icon: CircleCheckBig },
 ];

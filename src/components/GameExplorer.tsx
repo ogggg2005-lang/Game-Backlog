@@ -89,13 +89,13 @@ export default function GameExplorer({ initialGames }: GameExplorerProps) {
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
           >
             <option value="all">ทั้งหมด</option>
-            <option value="not-started">ยังไม่เริ่ม</option>
+            <option value="not-started">ยังไม่เริ่มเล่น</option>
             <option value="playing">กำลังเล่น</option>
             <option value="completed">เล่นจบแล้ว</option>
           </select>
         </label>
         <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-          เกมที่ยังไม่เริ่มรวม {notStartedHours} ชั่วโมง
+          เกมที่ยังไม่เริ่มเล่นรวม {notStartedHours} ชั่วโมง
         </p>
       </div>
       {visibleGames.length === 0 ? <p className="py-8 text-center text-zinc-600 dark:text-zinc-400">ไม่พบเกมที่ตรงกับคำค้น</p> : <section className="grid grid-cols-1 gap-6 sm:grid-cols-2">{visibleGames.map((game) => <GameCard key={game.id} game={game} onEdit={() => setEditingId(game.id)} onStatusChange={(status) => dispatch(statusUpdated({ id: game.id, status }))} onDelete={() => setPendingDeleteId(game.id)} />)}</section>}

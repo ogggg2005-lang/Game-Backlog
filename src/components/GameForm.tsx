@@ -26,7 +26,7 @@ const emptyDraft: GameDraft = {
 };
 
 const statusOptions: Array<{ value: GameStatus; label: string }> = [
-  { value: "not-started", label: "ยังไม่เริ่ม" },
+  { value: "not-started", label: "ยังไม่เริ่มเล่น" },
   { value: "playing", label: "กำลังเล่น" },
   { value: "completed", label: "เล่นจบแล้ว" },
 ];
@@ -98,7 +98,7 @@ export default function GameForm({
           {initialGame ? "แก้ไขเกม" : "เพิ่มเกมใหม่"}
         </h2>
         <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-          บันทึกเกมที่ตั้งใจจะเล่น
+          บันทึกเกมที่วางแผนจะเล่น
         </p>
       </div>
 
@@ -115,7 +115,7 @@ export default function GameForm({
             <option value="">เลือกแพลตฟอร์ม</option>
             <option value="PC">PC</option>
             <option value="PlayStation 5">PlayStation 5</option>
-            <option value="Xbox Series X|S">Xbox Series X|S</option>
+            <option value="Xbox Series X|S">Xbox Series X|5</option>
             <option value="Nintendo Switch">Nintendo Switch</option>
             <option value="Mobile phone">Mobile phone</option>
           </select>

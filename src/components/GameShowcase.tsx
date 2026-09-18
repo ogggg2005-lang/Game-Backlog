@@ -2,7 +2,7 @@ import Link from "next/link";
 import { games } from "@/data/games";
 
 const statusLabels = {
-  "not-started": "ยังไม่เริ่ม",
+  "not-started": "ยังไม่เริ่มเล่น",
   playing: "กำลังเล่น",
   completed: "เล่นจบแล้ว",
 } as const;
