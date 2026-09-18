@@ -19,7 +19,8 @@ export default function GameExplorer({ initialGames }: GameExplorerProps) {
   const store = useAppStore();
   const initializedRef = useRef(false);
   const dispatch = useAppDispatch();
-  const games = useAppSelector((state) => state.games);
+  const storedGames = useAppSelector((state) => state.games);
+  const games = initializedRef.current ? storedGames : initialGames;
   const [keyword, setKeyword] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState<GameStatus | "all">("all");
